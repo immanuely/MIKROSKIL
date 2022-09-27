@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: aquamarine;
+    }
+</style>
+<body>
+    <h1>Punny Web</h1>
+    <p>website akan segera dapat diakses lengkap</p>
+    <p>pada 10/10/2021</p>
+    <p>Now: <span id="now">10/6/21</span></p>
+    </p>
+    <input id="user_email" type="email" value="name@example.com" />
+    <br>
+    <br>
+    <button onclick="notif()">        
+        <p>Get Notification</p>
+    </button>
+
+    <script>
+        let today = new Date(Date.now())
+        let now = document.getElementById('now')
+        now.innerHTML = today.toLocaleDateString()
+        
+        let notif = document.getElementById('notif')
+        notif = () => {
+            let user_email = document.getElementById('user_email').value
+            alert(user_email)
+        }
+    </script>
+</body>
+</html>

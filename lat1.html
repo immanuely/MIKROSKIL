@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            EXERCISE CASE 1
+        </title>
+        <style>
+            body {
+                background-color: aquamarine
+            }
+            .text1 {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="text1">HITUNG NILAI</h1>
+
+        <center>
+            <form>
+            <table>
+                <tr>
+                    <td>Nilai Tugas</td>
+                    <td><input type="number" name="" id="tugas" min="0" max="100"></td>
+                </tr>
+                <tr>
+                    <td>Nilai UTS</td>
+                    <td><input type="number" name="" id="uts" min="0" max="100"></td>
+                </tr>
+                <tr>
+                    <td>Nilai UAS</td>
+                    <td><input type="number" name="" id="uas" min="0" max="100"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" onclick="notif()" value="hitung" class="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nilai Huruf:
+                    </td>
+                    <td id="huruf"></td>
+                </tr>
+            </table>
+        </form>
+        </center>
+        <script>
+            function notif () {
+                let tugas = document.getElementById("tugas").value
+                let uts = document.getElementById("uts").value
+                let uas = document.getElementById("uas").value
+                let NA = (uts * 0.3) + (uas * 0.3) + (tugas * 0.4)
+                let huruf = ''
+
+                if (NA >= 80){
+                    huruf = 'A'
+                } else if (NA >= 70) {
+                    huruf = 'B'
+                } else if (NA >= 60) {
+                    huruf = 'C'
+                } else if (NA >= 40) {
+                    huruf = 'D'
+                } else {
+                    huruf = 'E'
+                }
+                document.getElementById('huruf').innerText = huruf
+            }
+        </script>
+    </body>
+</html>
