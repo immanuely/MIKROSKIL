@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Converter
+        </title>
+        <style>
+            input.belajar {
+                color: black;
+                font: 13px verdana,sans-serif;
+                background-color: aquamarine;
+            }
+            textarea.ajar {
+                color: black;
+                background-color: aquamarine;
+            }
+            .back {
+                background-color: aquamarine;
+            }
+            body {
+                background-color: aquamarine;
+            }
+        </style>  
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <form class="back">
+                <textarea class="belajar" cols="50" rows="10" onchange="this.form.char.value=this.value.length;this.form.word.value=words(this.value)"></textarea>
+                <br>
+                <input class="ajar" name="char" size="2"> <b>Jumlah Karakter</b>
+                <input class="ajar" name="word" size="2"> <b>Jumlah Kata</b>
+            </form>
+        </div>
+
+        <script>
+            function words(content){
+                var i=0;
+                var numberofwords=1;
+                while(i<=content.length){
+                    if (content.substring(i,i+1) == " "){
+                        numberofwords++;
+                        i++;
+                    }
+                    if (content.substring(i,i+1) == "\n"){
+                        numberofwords++;
+                        i++;
+                    }
+                    i++;
+                }
+                return numberofwords;
+            }
+        </script>
+    </body>
+</html>
