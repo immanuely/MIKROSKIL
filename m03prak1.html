@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title> JSON</title>
+        <style>
+            .text {
+                text-align: center;
+                background-color: aquamarine;
+            }
+            body {
+                text-align: center;
+            }
+            .bd {
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+    <body class="bd">
+         <h1 class="text">Punny WEB</h1>
+         <p id="author"></p>
+         <img src="" alt="" id="gambar" width="300px">
+
+         <script>
+            let show = function (data) {
+                    let arr = JSON.parse(data);
+                    arr = arr[0];
+                    document.getElementById("gambar").src = arr.download_url;
+                    document.getElementById("author").innerHTML = arr.author;
+                }
+
+                let load = function () {
+                    let link = "https://picsum.photos/v2/list?page=2&limit=1";
+                    let xhr;
+                    xhr = new XMLHttpRequest();
+                    try {
+                        xhr = new XMLHttpRequest();
+                        if (!xhr) return -1;
+
+                        xhr.onreadystatechange = function () {
+                            if (xhr.readyState === 4 && xhr.status === 200) {
+                                show(xhr.responseText);
+                            }
+                        };
+                        xhr.open('GET', link);
+                        xhr.send();
+                    }
+                    catch (e) {
+                        console.log(e)
+                    }
+                }
+                load();
+ 
+
+         </script>
+    </body>
+</html>
